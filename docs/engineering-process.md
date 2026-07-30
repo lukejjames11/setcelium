@@ -27,7 +27,7 @@ discovery graph, before any social features.
 3. Discovery graph (artists + typed edges between them) — build third
 4. Link concerts to discovery graph nodes — build fourth
 5. Later increments: auth/multi-user, social "introduced by" linking,
-   (possibly, eventually) photo correlation
+   (possibly, eventually) photo correlation, festival logging, manual entry on what shows were seen.
 
 ## Design Principles
 
