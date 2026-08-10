@@ -1,0 +1,30 @@
+# Maven
+target/
+!.mvn/wrapper/maven-wrapper.jar
+
+# IDE - VS Code
+.vscode/
+
+# IDE - IntelliJ
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# IDE - Eclipse
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+# macOS
+.DS_Store
+
+# Logs
+*.log
+
+# Build helper files
+cp.txt
