@@ -1,5 +1,6 @@
 com/setcelium/model/Concert.class
 com/setcelium/SetceliumApplication.class
+com/setcelium/service/parser/TicketmasterParser.class
 com/setcelium/dto/ParsedConcert.class
 com/setcelium/service/parser/EmailParser.class
 com/setcelium/repository/ConcertRepository.class

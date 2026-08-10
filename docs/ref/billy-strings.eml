@@ -1,0 +1,1094 @@
+Delivered-To: kingjamesljj@gmail.com
+Received: by 2002:a05:6124:25a0:b0:3d7:e4fb:3908 with SMTP id g32csp1368794vlr;
+        Wed, 14 May 2025 08:12:40 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IEfVFZyBod6KmpwErYWd4Z7Mp8Wxe0+kMzCEumQJdl78OtYk0ixM42uwkGCDXisg2j0lmbK
+X-Received: by 2002:a05:620a:170f:b0:7ca:e943:144b with SMTP id af79cd13be357-7cd287f4c01mr624762585a.23.1747235559969;
+        Wed, 14 May 2025 08:12:39 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1747235559; cv=none;
+        d=google.com; s=arc-20240605;
+        b=LX8TYeMhfvLHZLnsuMpMqmzlxCt2YCU8ZN5r2fAilo42Tg6ogi57tKaF/1iQtbu+NL
+         YKG/ej/L+yvIsRA+F5sKuSJp8pQXSSjjKA7WY6eNnMslQAZUZ2DOe2y00S6Avo3oIL1V
+         Wg8b29tuxGD5aJbXttau64LphyKXb//u1oPmLwVJszH9sWvCxrqlEgWyqM7K/hXl15jt
+         2vHA0E0ge4lgT6gx6cSAJxb/07J4oQnp7Ip+mAxlXQzVYxM+jBDM9rYoDIgYXXrbcYkv
+         5Q0ndfvXBkmDu1npEXwzlwBRW8OtdI6f1F19QlQZY/YWAdMfD5mhqhAyVdLm+F6DHDc8
+         jxbw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=feedback-id:message-id:reply-to:mime-version:list-help:date:subject
+         :to:from:dkim-signature:dkim-signature;
+        bh=iqielMRiQHJqJ0C11ZwdkY2tURkZbHvSTAc0FaYgjgQ=;
+        fh=UwCjN2/e/yASQ7YoOfS068NiCwd4ifvyziJAESzfnzE=;
+        b=le0mv+Gs5s27JoXU7i3/l3KdtQ6UMdMLFcosiYwpS1JubJr3B0N/g0TmTdi1vuGD4q
+         Pogp9o0hMhy5l/nHlX5YUt4TK4Vf7vwrdLtDUBx7G0JDYRm04gj+JUHVGX7Zp4WOKH5x
+         0VVShsUj/xiy0oyoEiTCdiplRL1y42IsHqdVlSKGcoagfGL+5GudCaJumgEn8MlXrbkW
+         l3pBdcx/8+c6xlxGNyOY/fmt8ndVfIgk0RvP3OePgt6sdYpYaqNLhVJLRsgApJphVql9
+         M3C62Zu8YcKPDr3z140a3jNcZVM48fMSd9XxhDwIShc/5Xp0+2trk7aalsQ3ZoesYlqR
+         obsw==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@email.ticketmaster.com header.s=200608 header.b=OsQPvbyf;
+       dkim=pass header.i=@s7.y.mc.salesforce.com header.s=fbldkim7 header.b=E4PNUvYq;
+       spf=pass (google.com: domain of bounce-21_html-398492458-929097-7222895-526195@bounce.email.ticketmaster.com designates 136.147.183.165 as permitted sender) smtp.mailfrom=bounce-21_HTML-398492458-929097-7222895-526195@bounce.email.ticketmaster.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=email.ticketmaster.com
+Return-Path: <bounce-21_HTML-398492458-929097-7222895-526195@bounce.email.ticketmaster.com>
+Received: from mta31.email.ticketmaster.com (mta31.email.ticketmaster.com. [136.147.183.165])
+        by mx.google.com with ESMTPS id af79cd13be357-7cd01021575si1306799185a.608.2025.05.14.08.12.39
+        for <kingjamesljj@gmail.com>
+        (version=TLS1_2 cipher=ECDHE-ECDSA-AES128-GCM-SHA256 bits=128/128);
+        Wed, 14 May 2025 08:12:39 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounce-21_html-398492458-929097-7222895-526195@bounce.email.ticketmaster.com designates 136.147.183.165 as permitted sender) client-ip=136.147.183.165;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@email.ticketmaster.com header.s=200608 header.b=OsQPvbyf;
+       dkim=pass header.i=@s7.y.mc.salesforce.com header.s=fbldkim7 header.b=E4PNUvYq;
+       spf=pass (google.com: domain of bounce-21_html-398492458-929097-7222895-526195@bounce.email.ticketmaster.com designates 136.147.183.165 as permitted sender) smtp.mailfrom=bounce-21_HTML-398492458-929097-7222895-526195@bounce.email.ticketmaster.com;
+       dmarc=pass (p=QUARANTINE sp=QUARANTINE dis=NONE) header.from=email.ticketmaster.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=200608; d=email.ticketmaster.com;
+ h=From:To:Subject:Date:List-Help:MIME-Version:Reply-To:Message-ID:Content-Type;
+ i=customer_support@email.ticketmaster.com;
+ bh=iqielMRiQHJqJ0C11ZwdkY2tURkZbHvSTAc0FaYgjgQ=;
+ b=OsQPvbyfor2CJFR54wuLEchgZiTJNlDunrXr4dZTivbUkxlOF+ivFmvMnKWammfpcq4SfsJs2OtO
+   dNQyjVowjCHfeayvr0BGVyPrxylkMPo44ZPEohZjmwxalJTU3hHlwrDJyTB+Qa+eNYjPiNmdEC4e
+   Fr7sTCeA3H5evY1dcFc=
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=fbldkim7; d=s7.y.mc.salesforce.com;
+ h=From:To:Subject:Date:List-Help:MIME-Version:Reply-To:Message-ID:Content-Type;
+ bh=iqielMRiQHJqJ0C11ZwdkY2tURkZbHvSTAc0FaYgjgQ=;
+ b=E4PNUvYq5ytdn1IJKu9n85Nr4ICbHHiAUY+CA9NA6YiGpIEO6gefTXDpo7x/lGc3bmZqDsbo88I+
+   Pm+Sjwg1sFC419Lmvk2eaCE/jl28sJK8Mkqrb2zZw6X1Yiqig/ecL0Oj7WkzbIpVo/I4yqR9eRKM
+   7psYe6Rmgk2UObr6p+xrcB4r1/hDbCDOupnOwTx29nA+wDbPHL/OroKDKt/yhSqP/VNKP3A+mobr
+   nzS2CXbgh8UFew7bLAOuoFUkQddnJsCLBgEjQojK0b5+ECcVOsPqs42gBU/kIvMLkxxBeb48jTlc
+   0TSzZyFdokKVH0uM1rq71pS0IQpVtEF31KgBKw==
+Received: by mta31.email.ticketmaster.com id h4ipee2fmd4c for <kingjamesljj@gmail.com>; Wed, 14 May 2025 15:12:36 +0000 (envelope-from <bounce-21_HTML-398492458-929097-7222895-526195@bounce.email.ticketmaster.com>)
+From: "Ticketmaster" <customer_support@email.ticketmaster.com>
+To: <kingjamesljj@gmail.com>
+Subject: You Got Tickets To Billy Strings
+Date: Wed, 14 May 2025 09:12:35 -0600
+List-Help: <https://click.email.ticketmaster.com/subscription_center.aspx?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJtaWQiOiI3MjIyODk1IiwicyI6IjM5ODQ5MjQ1OCIsImxpZCI6IjIxIiwiaiI6IjkyOTA5NyIsImpiIjoiNTI2MTk1IiwiZCI6IjcwMjQwIn0.steQDQMNAoZBet1_BEYl6CBryK6fMfANA-uoMw6PKbY>
+MIME-Version: 1.0
+Reply-To: "Ticketmaster" <reply-febb1d727c640d7a-21_HTML-398492458-7222895-526195@email.ticketmaster.com>
+x-messageKey: 8d185ee5-8f64-49f9-935c-b26baee90896
+X-Delivery: Transactional
+X-SFMC-Stack: 7
+x-job: 7222895_929097
+Message-ID: <ebf524f2-aeef-47f5-9b3b-4595782fc6d5@atl1s07mta2766.xt.local>
+Feedback-ID: 7222895:929097:136.147.183.165:sfmktgcld
+Content-Type: multipart/alternative;
+	boundary="i2TX2XhxDcTC=_?:"
+
+This is a multi-part message in MIME format.
+
+--i2TX2XhxDcTC=_?:
+Content-Type: text/plain;
+	charset="utf-8"
+Content-Transfer-Encoding: 8bit
+
+Ticketmaster
+
+--i2TX2XhxDcTC=_?:
+Content-Type: text/html;
+	charset="utf-8"
+Content-Transfer-Encoding: 8bit
+
+<!-- TICKETMASTER V4.2 03012019 --> 
+<!doctype html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+    <meta name="viewport" content="width=device-width" />
+    <title>Ticketmaster
+    </title>
+    <style type="text/css">
+      @font-face {
+        font-family: 'Averta-Regular';
+        src: url('http://media.ticketmaster.com/en-us/img/email/cend/Averta-Regular.eot') format('eot');
+        src: url('http://media.ticketmaster.com/en-us/img/email/cend/Averta-Regular.woff') format('woff'),
+          url('http://media.ticketmaster.com/en-us/img/email/cend/Averta-Regular.woff2') format('woff2'),
+          url('http://media.ticketmaster.com/en-us/img/email/cend/Averta-Regular.otf') format('opentype'),
+          url('http://media.ticketmaster.com/en-us/img/email/cend/Averta-Regular.ttf') format('truetype');
+        font-weight: 300 !important;
+        font-style: normal;
+      }
+      @font-face {
+        font-family: 'Averta-Semibold';
+        src: url('http://media.ticketmaster.com/en-us/img/email/cend/avertape-semibold-webfont.eot') format('eot');
+        src: url('http://media.ticketmaster.com/en-us/img/email/cend/avertape-semibold-webfont.woff') format('woff'),
+          url('http://media.ticketmaster.com/en-us/img/email/cend/avertape-semibold-webfont.woff2') format('woff2'),
+          url('http://media.ticketmaster.com/en-us/img/email/cend/avertape-semibold-webfont.otf') format('opentype'),
+          url('http://media.ticketmaster.com/en-us/img/email/cend/avertape-semibold-webfont.ttf') format('truetype');
+        font-weight: bold;
+        font-style: normal;
+      }
+      @font-face {
+        font-family: 'TMSans';
+        src: url('http://media.ticketmaster.com/en-us/img/email/cend/ET_Font_20160219_TMSans-Regular.eot');
+        src: url('http://media.ticketmaster.com/en-us/img/email/cend/ET_Font_20160219_TMSans-Regular.woff') format('woff'),
+          url('http://media.ticketmaster.com/en-us/img/email/cend/ET_Font_20160219_TMSans-Regular.woff2') format('woff2'),
+          url('http://media.ticketmaster.com/en-us/img/email/cend/ET_Font_20160219_TMSans-Regular.otf') format('opentype'),
+          url('http://media.ticketmaster.com/en-us/img/email/cend/ET_Font_20160219_TMSans-Regular.ttf') format('truetype');
+        font-weight: normal;
+      }
+      @font-face {
+        font-family: 'TMSans-Bold';
+        src: url('http://media.ticketmaster.com/en-us/img/email/cend/ET_Font_20160219_TMSans-Bold.eot');
+        src: url('http://media.ticketmaster.com/en-us/img/email/cend/ET_Font_20160219_TMSans-Bold.woff') format('woff'),
+          url('http://media.ticketmaster.com/en-us/img/email/cend/ET_Font_20160219_TMSans-Bold.woff') format('woff2'),
+          url('http://media.ticketmaster.com/en-us/img/email/cend/ET_Font_20160219_TMSans-Bold.otf') format('opentype'),
+          url('http://media.ticketmaster.com/en-us/img/email/cend/ET_Font_20160219_TMSans-Bold.ttf') format('truetype');
+        font-weight: bold;
+      }
+      .tmsans {
+        font-family: 'TMSans', 'Futura', Arial, Helvetica, sans-serif !important;
+      }
+      .font-averta {
+        font-family: 'Averta-Regular', Arial, Helvetica, sans-serif !important;
+      }
+      .font-avertasemibold {
+        font-family: 'Averta-Semibold', Arial, Helvetica, sans-serif !important;
+      }
+      /* Fix gap on Outlook.com and Outlook 365 */
+      [owa] div,button {
+        margin:0 !important;
+        padding:0 !important;
+        display:block !important;
+      }
+      /* prevent iOS font upsizing */
+      * {
+        -webkit-text-size-adjust: none;
+      }
+      /* force Outlook.com to honor line-height */
+      .ExternalClass * {
+        line-height: 100%;
+      }
+      td {
+        mso-line-height-rule: exactly;
+      }
+      /* prevent iOS auto-linking */
+      a[x-apple-data-detectors] {
+        color: inherit !important;
+        text-decoration: none !important;
+        font-size: inherit !important;
+        font-family: inherit !important;
+        font-weight: inherit !important;
+        line-height: inherit !important;
+      }
+      /* prevent Samsung mail app auto-linking */
+      #MessageViewBody a {
+        color: inherit;
+        text-decoration: none;
+        font-size: inherit;
+        font-family: inherit;
+        font-weight: inherit;
+        line-height: inherit;
+      }
+      /*** prevent other link color for example in Gmail ***/
+      .white-footer-address a {
+        color:#ffffff!important; text-decoration:none!important;
+      }
+      /** Prevent Outlook Purple Links on CTAs **/
+      .white-text-link a:link {
+        color: #ffffff;
+      }
+      .blue-text-link a:link {
+        color: #026cdf;
+      }
+      /*** Responsive CSS ***/
+      @media only screen and (max-width:599px) {
+        /*** Layout ***/
+        body {
+          width: 100%;
+          min-width: 100%;
+          position: relative;
+          top: 0;
+          left: 0;
+          right: 0;
+          margin: 0;
+          padding: 0;
+        }
+        .marginFix {
+          position: relative;
+          top: 0;
+          left: 0;
+          right: 0;
+        }
+        .font-averta {
+          font-weight: normal !important;
+        }
+        .full-width-container {
+          width: 100% !important;
+          min-width: 280px !important;
+        }
+        .hide {
+          width: 0px !important;
+          height: 0px !important;
+          display: none !important;
+        }
+        .show-mobile {
+          float:none !important;
+          display:table-row !important;
+          margin: 0;
+          padding:0;
+          overflow : visible !important;
+          width:auto !important;
+          height: auto !important;
+          max-height:inherit !important;
+          visibility: visible !important;
+          font-size: inherit !important;
+        }
+        .full-width {
+          width: 100% !important;
+          min-width: 100% !important;
+        }
+        .stackTbl {
+          width: 100% !important;
+          display: table !important;
+        }
+        .center {
+          margin: 0px auto !important;
+        }
+        .autoHeight {
+          height:auto !important;
+        }
+        /*** Padding Styles ***/
+        .mobile-padding0 {
+          padding: 0px !important;
+        }
+        .mobile-padding16 {
+          padding:16px !important;
+        }
+        .mobile-padding16H {
+          padding-top:16px !important;
+          padding-bottom:16px !important;
+        }
+        .mobile-padding16W {
+          padding-left:16px !important;
+          padding-right:16px !important;
+        }
+        .mobile-padding16T {
+          padding-top:16px !important;
+        }
+        .mobile-padding16B {
+          padding-bottom:16px !important;
+        }
+        .mobile-padding20 {
+          padding:20px !important;
+        }
+        .mobile-padding20H {
+          padding-top:20px !important;
+          padding-bottom:20px !important;
+        }
+        .mobile-padding20W {
+          padding-left:20px !important;
+          padding-right:20px !important;
+        }
+        .mobile-padding20T {
+          padding-top:20px !important;
+        }
+        .mobile-padding20B {
+          padding-bottom:20px !important;
+        }
+        .mobile-padding20R {
+          padding-right:20px !important;
+        }
+        .mobile-padding25 {
+          padding:25px !important;
+        }
+        .mobile-padding25H {
+          padding-top:25px !important;
+          padding-bottom:25px !important;
+        }
+        .mobile-padding25W {
+          padding-left:25px !important;
+          padding-right:25px !important}
+        .mobile-padding25T {
+          padding-top:25px !important;
+        }
+        .mobile-padding25B {
+          padding-bottom:25px !important;
+        }
+        .ad-on {
+          padding:16px 16px 16px 14px !important;
+        }
+        /*** Dividers ***/
+        .divider {
+          width: 100% !important;
+        }
+        .sideRails {
+          width: 20px !important;
+        }
+        /*** Image Styles ***/
+        img.fullWidthImg {
+          width: 100% !important;
+          height: auto !important;
+          min-width: 100% !important;
+        }
+        .tmLogo {
+          width: 142px !important;
+          height: auto !important;
+        }
+        /*** Text Styles ***/
+        .centerText {
+          text-align: center !important;
+        }
+        .largeHeadlne {
+          font-size: 32px !important;
+          line-height: 40px !important;
+          padding: 20px 20px 8px 20px !important;
+        }
+        .text10px {
+          font-size: 10px !important;
+          line-height: 16px !important;
+        }
+        .text12px {
+          font-size: 12px !important;
+          line-height: 16px !important;
+        }
+        .text14px {
+          font-size: 14px !important;
+          line-height: 19px !important;
+        }
+        .text16px {
+          font-size: 16px !important;
+          line-height: 22px !important;
+        }
+        .text20px {
+          font-size: 20px !important;
+          line-height: 24px !important;
+        }
+        .text22px {
+          font-size: 22px !important;
+          line-height: 26px !important;
+        }
+        .text24px {
+          font-size: 24px !important;
+          line-height: 28px !important;
+        }
+        .text28px {
+          font-size: 28px !important;
+          line-height: 32px !important;
+        }
+        /*** App Store Buttons ***/
+        .width284 {
+          width: 284px !important;
+        }
+        .buttonLeft {
+          float: left !important;
+        }
+        .buttonRight {
+          float: right !important;
+        }
+        /*** Footer ***/
+        .footerSocial {
+          padding-right: 10px !important;
+          width: 50px !important;
+        }
+        .footerSocial img {
+          height: 20px !important;
+          width: auto !important;
+        }
+        .footerText {
+          padding-top: 10px !important;
+          font-size: 12px !important;
+          line-height: 16px !important;
+          text-align:center !important;
+          padding:0px 5px 0px 5px;
+        }
+        .footerNavLeft {
+          width: 80% !important;
+          display: table !important;
+        }
+        .footerNavRight {
+          width: 60% !important;
+          display: table !important;
+        }
+        /*** END Responsive CSS ***/
+      }
+    </style>
+    <!--OUTLOOK CSS - DO NOT DELETE-->
+    <!--[if gt mso 9]> <style type="text/css"> /* prevents Outlook from defaulting to Times New Roman */ td {font-family: Arial, Helvetica, sans-serif !important;}  /* show hidden content only for Outlook desktop app */ .show_ol { display: block !important; margin: 0; padding: 0; overflow : visible !important; width: auto !important; max-height: inherit !important; } </style> <![endif]-->
+  
+
+
+
+ 
+
+
+
+
+     
+ </head>
+  <body style="margin:0px; padding:0px; background-color:#FFFFFF;" bgcolor="#FFFFFF"><style type="text/css">
+div.preheader 
+{ display: none !important; } 
+</style>
+<div class="preheader" style="font-size: 1px; display: none !important;">The countdown to your event starts now. Save this info for your records.</div>
+      
+      <!-- WHITE BACKGROUND CONTAINER -->
+     
+      
+      <table cellpadding="0" cellspacing="0" border="0" width="100%" class="marginFix font-averta" bgcolor="#FFFFFF" style="background-color:#FFFFFF;">
+        <tr>
+          <td align="center">
+            <table cellpadding="0" cellspacing="0" border="0" width="650" class="full-width-container">
+              <tr> 
+                <td width="650" align="center" style="min-width:650px;" class="full-width-container">
+                  <!-- CONTENT AREA(S) START -->
+                  <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+                    <!--  -->
+                    <tr>
+                      <td height="1" style="max-height:1px;line-height:1px; mso-line-height-rule:exactly; font-size: 1px;">
+                        <img src="https://click.email.ticketmaster.com/open.aspx?ffcb10-febb1d727c640d7a-fe29177571650379731577-fe8c137277660c7470-ff9c1671-fe1b17797d600d7f711178-fec3117273650d78&d=70240&bmt=0" width="1" height="1" alt="">
+                      </td>
+                    </tr>
+                    <!---->
+                    <!-- -->
+                    <tr>
+                      <td>
+                        
+                        
+                      </td>
+                    </tr>
+                    <!--  -->                    
+                    <!-- -->
+                    <tr>
+                      <td>
+                        <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><!-- PC Logo -->
+
+<!----> <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><!-- TM Logo --><!----><style type="text/css">
+/* iOS only */
+  @supports (-webkit-overflow-scrolling: touch) {
+    .my-account-icon { padding-top: 7px !important; }
+  }</style><table align="center" border="0" cellpadding="0" cellspacing="0" class="header-logo-wrapper full-width" style="min-width: 100%;" width="650">
+ 
+  <tr>
+   <td align="center" class="mobile-padding16W" style="border-top: solid 4px #026cdf; padding:10px 24px 10px 24px;" valign="top">
+    <table align="center" border="0" cellpadding="0" cellspacing="0" class="header-logo" valign="top" width="100%">
+     
+      <tr>
+       <td align="left" width="143">
+        <a  href="https://click.email.ticketmaster.com/?qs=c7e4da21928f302ae3a9f52822e651756cf22e4c1a1716937cc019d2a955b8c5141e8f5558ea254841f30c2a3c2925e7e75340a8d07f28fc74ce0f19983f0106" target="_blank"><img alt="Ticketmaster" border="0" src="https://image.email.ticketmaster.com/lib/fe8c137277660c7470/m/47/27f96e8f-743b-4c76-ba28-8545582d4e8f.png" style="height: auto;" width="143"></a></td><td>
+        &nbsp;</td><td align="right" valign="middle">
+        <table align="right" border="0" cellpadding="0" cellspacing="0" class="my-account" valign="middle" width="121">
+         
+          <tr>
+           <td class="my-account-icon" height="44" style="padding-right:10px;">
+            <a  href="https://click.email.ticketmaster.com/?qs=c7e4da21928f302a0ae85f86da2717b7b3ab488e3716735b5caddb4ad74625747b5ffc723ff2f9eb77c3b0385ce8f1daa80893ee5605591a0f7764f535906da8" target="_blank"><img alt="Ticketmaster" border="0" class="icon-user" src="https://image.email.ticketmaster.com/lib/fe8c137277660c7470/m/35/9c413975-46fb-4ad8-97f7-4d97d25525e7.png" style="height: auto;" width="20"></a></td><td align="left" class="dgrey-text-link" height="44" style="font-family: 'Averta-Semibold', Arial, Helvetica, sans-serif; font-size: 16px; line-height: 20px; color: #262626; white-space: nowrap;">
+            <a  href="https://click.email.ticketmaster.com/?qs=c7e4da21928f302ae4ec55c5bd49acb454c5302beb2f567c4a6fa85ead33d7698eaea79ea3272d01b6fb3aa033dc4924936acced137a8354662181d65c9f4ee7" style="text-decoration: none; white-space: nowrap; color:#262626;" target="_blank"><strong>My Account</strong></a></td></tr></table></td></tr></table></td></tr></table><!-- TM Logo --></td></tr></table> 
+<!----> 
+<!-- PC Logo --></td></tr></table>
+                        
+                      </td>
+                    </tr>
+                    <!--  -->
+                    <!-- -->
+                    <tr>
+                      <td>
+                        <table cellpadding="0" cellspacing="0" width="100%" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><!----> <table cellpadding="0" cellspacing="0" width="100%" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><!-- TM Headline --><!----><style type="text/css">
+@font-face {
+    font-family: 'Averta-Extrabold';
+    src: url('http://media.ticketmaster.com/en-us/img/email/cend/averta-extrabold.eot') format('eot');
+    src: url('http://media.ticketmaster.com/en-us/img/email/cend/averta-extrabold-webfont.woff') format('woff'),
+    url('http://media.ticketmaster.com/en-us/img/email/cend/averta-extrabold-webfont.woff2') format('woff2'),
+    url('http://media.ticketmaster.com/en-us/img/email/cend/averta-extrabold.otf') format('opentype'),
+    url('http://media.ticketmaster.com/en-us/img/email/cend/averta-extrabold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    }</style><!----><!-- Desktop --><table align="center" border="0" cellpadding="0" cellspacing="0" class="header-headline-hero hide" width="650">
+ 
+  <tr>
+   <td align="center" background="https://image.email.ticketmaster.com/lib/fe8c137277660c7470/m/35/f2534a9c-d3d1-446e-93fa-1ee660c7eb7a.png" bgcolor="#002da1" class="header-bgimage" height="270" valign="top" width="650">
+    <table align="center" border="0" cellpadding="0" cellspacing="0" class="headline-text-wrapper" width="100%">
+     
+      <tr>
+       <td align="center" class="mobile-padding16B" style="font-family: 'Averta-Extrabold', Arial, Helvetica, sans-serif; font-size: 46px; line-height: 52px; color: #FFFFFF; font-weight: 800; padding:75px 30px 0 30px;">
+        You Got the Tickets</td></tr><tr>
+       <td align="center" class="text16px" style="font-family: 'Averta-Semibold', Arial, Helvetica, sans-serif; font-size: 20px; line-height: 52px; color: #FFFFFF; font-weight: 600;">
+        Order # 52-50624/DL2</td></tr></table></td></tr><tr>
+   <td class="hide" height="24">
+    &nbsp;</td></tr></table><!-- /Desktop --><!-- Mobile --><!--[if !mso]><!--><table border="0" cellpadding="0" cellspacing="0" class="full-width" width="0">
+ 
+  <tr class="show-mobile" style="display:none; width:0px; max-height:0px; overflow:hidden; float:left;" valign="top">
+   <td align="center">
+    <table align="center" border="0" cellpadding="0" cellspacing="0" class="mobile-header-headline-hero" width="100%">
+     
+      <tr>
+       <td align="center" bgcolor="#002da1" class="header-bgimage" style="background: #002da1 url('https://image.email.ticketmaster.com/lib/fe8c137277660c7470/m/35/56cdabcb-fbaf-475a-9be9-3539af7d2b05.png') no-repeat; background-size: cover;" valign="top" width="100%">
+        <table align="center" border="0" cellpadding="0" cellspacing="0" class="headline-text-wrapper" width="100%">
+         
+          <tr>
+           <td align="center" style="font-family: 'Averta-Extrabold', Arial, Helvetica, sans-serif; font-size: 28px; line-height: 40px; color: #FFFFFF; font-weight: 800; padding:60px 30px 16px 30px; white-space: nowrap;">
+            You Got the Tickets</td></tr><tr>
+           <td align="center" class="white-text-link" style="font-family: 'Averta-Semibold', Arial, Helvetica, sans-serif; font-size: 16px; color: #FFFFFF; font-weight: 600; padding-bottom:65px;">
+            Order # 52-50624/DL2</td></tr></table></td></tr></table></td></tr></table><!--<![endif]--><!-- /Mobile --><!-- TM Headline --></td></tr></table> <!----></td></tr></table>
+                        
+                      </td>
+                    </tr>
+                    <!--  -->
+                    <!-- -->
+                    <tr>
+                      <td>
+                        <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><!-- Event-card --><!--[if gt mso 9]> <style type="text/css"> .o-event-image {padding-right:0 !important;} </style> <![endif]--><table align="center" border="0" cellpadding="0" cellspacing="0" class="pc-event-card full-width" width="650">
+ <!--  -->
+  <tr>
+   <td class="o-event-image mobile-padding0" style="padding: 20px 30px 40px 40px;" valign="top">
+    <table align="left" border="0" cellpadding="0" cellspacing="0" class="event-image hide" style="display:inline-table;" width="228">
+     
+      <tr>
+       <td align="left" valign="top">
+        <a  href="https://click.email.ticketmaster.com/?qs=c7e4da21928f302ae0e928c37d679a697b55815aa1874f7e98ecc3bc09d440b9b028e47c3eb2b7bcac1760838b7c3c75a63563620c5ab2526113cc4f058b2059" style="line-height:0; display:block;" target="_blank"><img alt="" border="0" class="fullWidthImg" src="https://s1.ticketm.net/dam/a/06d/83127eb6-67b8-4f43-8d2f-f4536d6dc06d_CUSTOM.jpg" style="height: auto;" width="228"></a></td></tr></table><!--[if !mso]><!--><!--MOBILE ////////////////////////////////////////////////////////////////// --><table border="0" cellpadding="0" cellspacing="0" class="full-width" width="0">
+     
+      <tr class="show-mobile" style="display:none; width:0px; max-height:0px; overflow:hidden; float:left;" valign="top">
+       <td align="left">
+        <a  href="https://click.email.ticketmaster.com/?qs=c7e4da21928f302ae0e928c37d679a697b55815aa1874f7e98ecc3bc09d440b9b028e47c3eb2b7bcac1760838b7c3c75a63563620c5ab2526113cc4f058b2059" style="line-height:0; display:block;" target="_blank"><img alt="" border="0" class="fullWidthImg" src="https://s1.ticketm.net/dam/a/06d/83127eb6-67b8-4f43-8d2f-f4536d6dc06d_RETINA_PORTRAIT_16_9.jpg" style="height: auto;" width="100%"></a></td></tr></table><!--MOBILE - end /////////////////////////////////////////////////////////// --><!--<![endif]--><!--[if gt mso 9]> </td> <td style="padding: 20px 30px 40px 0;"> <![endif]--><table align="left" border="0" cellpadding="0" cellspacing="0" class="event-text full-width" style="display:inline-table;" width="350">
+     
+      <tr>
+       <td class="hide" width="15">
+        &nbsp;</td><td align="left" class="mobile-padding16W mobile-padding25T mobile-padding25B" valign="top">
+        <table align="center" border="0" cellpadding="0" cellspacing="0" class="event-name" width="100%">
+         
+          <tr>
+           <td align="left" class="mobile-padding25B" style="font-family: 'Averta-Semibold', Arial, Helvetica, sans-serif; font-size: 20px; line-height: 26px; color: #262626; font-weight: 600; padding-bottom:8px;" valign="top">
+            Billy Strings <!----></td></tr></table><table align="center" border="0" cellpadding="0" cellspacing="0" class="event-details" width="100%">
+         <!--  --><!--  --><tr>
+           <td align="left" style="padding-right:16px;" valign="top" width="19">
+            <img alt="" src="https://image.email.ticketmaster.com/lib/fe8c137277660c7470/m/35/fa42d525-608f-42e9-af9c-5576ab8a0ed9.png" style="height:auto;" width="18"></td><td align="left" class="full-width" style="font-family: 'Averta-Regular', Arial, Helvetica, sans-serif; font-size: 16px; line-height: 20px; color: #262626;" valign="top" width="300">
+            Sat · Dec 13, 2025 · 7:30 PM<!----></td></tr><!--  --><!--  --><!--  --><!-- --><!-- --><tr>
+           <td align="left" style="padding-right:16px;padding-top:10px;" valign="top" width="19">
+            <img alt="" src="https://image.email.ticketmaster.com/lib/fe8c137277660c7470/m/35/5597c57d-9e79-4adf-bc51-d472f54acf1b.png" style="height:auto;" width="16"></td><td align="left" class="full-width" style="font-family: 'Averta-Regular', Arial, Helvetica, sans-serif; font-size: 16px; line-height: 20px; color: #262626;padding-top:10px;" valign="top" width="300">
+            Moody Center ATX &mdash; Austin, Texas</td></tr><!----><!-- Directions Link --><tr>
+           <td align="left" style="padding-right:16px;" valign="top" width="19">
+            &nbsp;</td><td align="left" class="full-width" style="font-family: 'Averta-Semibold', Arial, Helvetica, sans-serif; font-size: 16px; line-height: 20px;color: #026cdf;" valign="top" width="300">
+            <a  href="https://click.email.ticketmaster.com/?qs=c7e4da21928f302a2bf15bdfa44a22fdff3dde2656b7f5ab138159b2c8b65db0defb6749e25342249bc0ef339e6c777f7a1828a4e2ae39018b028d413290e325" style="color:#026cdf; font-weight: 600; text-decoration: none;" target="_blank">Get Directions</a></td></tr><!-- /Directions Link --><!--  --><!----><!----><tr>
+           <td align="left" colspan="2" style="padding-top:18px;">
+            <table align="left" border="0" cellpadding="0" cellspacing="0" style="min-width: 100%;" width="100%">
+             
+              <tr>
+               <td align="left" class="mobile-padding0 mobile-padding16B" style="padding-left:35px;" valign="top">
+                <!-- cta --><table border="0" cellpadding="0" cellspacing="0" class="full-width">
+                 <!----><tr>
+                   <td align="center" bgcolor="#026cdf" class="white-text-link full-width" height="36" style="font-family: 'Averta-Semibold', Arial, Helvetica, sans-serif;border-radius:2px;font-size:14px;font-weight:600;text-align:center;" valign="middle" width="162">
+                    <a  href="https://click.email.ticketmaster.com/?qs=c7e4da21928f302ad533734663f005221a76c97de0181a3860cbdb60bcbdc3bb08be64c094e13a71edb2906d7fcf272e69add614b51a0b7cda73e51259a89de4" style="color:#ffffff;display:block;text-decoration:none;-webkit-text-size-adjust:none;padding:10px 16px;white-space: nowrap;">View Mobile Ticket</a></td></tr><!----></table><!-- /cta --></td></tr></table></td></tr><!----></table></td></tr></table></td></tr></table><!-- /Event-card --></td></tr></table><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"> <!----></td></tr></table>
+                        
+                      </td>
+                    </tr>
+                    <!--  -->
+                    <!-- -->
+                    <tr>
+                      <td>
+                        <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><!-- START SELLER NOTE --><!-- END SELLER NOTE --></td></tr></table>
+                        
+                      </td>
+                    </tr>
+                    <!--  -->
+                    <!-- -->
+                    <tr>
+                      <td>
+                        <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner">
+
+<table align="center" border="0" cellpadding="0" cellspacing="0" class="imp-details-wrapper" width="100%">
+  <tr>
+    <td align="left" class="mobile-padding16W" style="padding: 0 40px 15px; font-family: 'Averta-Regular', Arial, Helvetica, sans-serif; font-size: 18px; line-height: 18px; color: #262626;">
+      <font face="'Averta-Semibold', Arial, Helvetica, sans-serif">
+        <strong>Important Information </strong> 
+      </font>
+    </td>
+  </tr>
+</table>
+</td></tr></table>
+                        
+                      </td>
+                    </tr>
+                    <!--  -->
+                    <!-- -->
+                    <tr>
+                      <td>
+                        <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><!----><!--  --> <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><!-- START HEALTH CHECK --><!----><!----><!-- END HEALTH CHECK --></td></tr></table> <!-- --> <!-- --></td></tr></table>
+                        
+                      </td>
+                    </tr>
+                    <!--  -->
+                    <!--  -->
+                    <!-- -->
+                    <tr>
+                      <td>
+                        <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner">
+<!-- WebInfo Start -->
+<table align="center" border="0" cellpadding="0" cellspacing="0" class="imp-details-wrapper" width="100%">
+  <tr>
+    <td class="mobile-padding16W" style="padding: 0 40px 33px 40px;">
+      <!-- Important details inner content -->
+      <table align="center" border="0" cellpadding="0" cellspacing="0" class="imp-details" style="min-width:100%; border: 1px solid #026cdf; border-radius: 2px; background-color: #e5f0fc;" width="100%">
+        <tr>
+          <td style="padding: 14px 16px 16px 16px;">
+            <table align="center" border="0" cellpadding="0" cellspacing="0" class="imp-details-content" width="100%">
+              <tr>
+                <td align="left" style="padding:0 18px 0 6px;" valign="top" width="22">
+                  <img alt="i" src="https://image.email.ticketmaster.com/lib/fe8c137277660c7470/m/35/99af1c9a-9c28-4dfe-b4b1-500de38ba217.png" style="display:block; height: auto;" width="22">
+                </td>
+                <td align="left" style="font-family: 'Averta-Regular', Arial, Helvetica, sans-serif; font-size: 14px; line-height: 18px; color: #262626;" valign="middle">
+                  <font face="'Averta-Semibold', Arial, Helvetica, sans-serif">
+                    <strong>
+                      Important Event Info
+                    </strong>
+                  </font>
+                  <br>
+                  Please note, there is NO OPENER for this show. Please plan to arrive with plenty of time for processing and entry. All tickets are MOBILE DELIVERY ONLY. Delayed delivery, no tickets will be delivered prior to 2 days before the event. No refunds or exchanges. All sales are final. There is a strict 4 ticket limit per household, per show. Additional orders exceeding the ticket limit may be canceled without notice. This includes orders associated with the same name, e-mail address, billing address, credit card number, and/or other information.
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <!-- /Important details inner content -->
+    </td>
+  </tr>
+</table>
+<!-- WebInfo End -->
+</td></tr></table>
+                        
+                      </td>
+                    </tr>
+                    <!--  -->
+                    <!-- -->
+                    <tr>
+                      <td>
+                        <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner">
+<!--  --></td></tr></table>
+                        
+                      </td>
+                    </tr>
+                    <!--  -->
+                    <!-- -->
+                    <tr>
+                      <td>
+                        <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><!----></td></tr></table>
+                        
+                      </td>
+                    </tr>
+                    <!--  -->
+                    <!--  -->
+                    <!-- -->
+                    <tr>
+                      <td>
+                        <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"></td></tr></table>
+                        
+                      </td>
+                    </tr>
+                    <!--  -->
+                    <!--  -->
+                    <!-- -->
+                    <tr>
+                      <td>
+                        <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><!--  --> <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><!-- --><table align="center" border="0" cellpadding="0" cellspacing="0" style="" width="100%">
+ 
+  <tr>
+   <td align="center" bgcolor="#ffffff" class="pad-25R pad-25L" style="padding:0px 40px 32px">
+    <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
+     
+      <tr>
+       <td align="left" style="text-align:center;padding:0 0 15px;height:86px" valign="top">
+        <img data-assetid="43508" height="86" src="https://image.email.ticketmaster.com/lib/fe8c137277660c7470/m/48/83a7bf7b-39ad-4f0c-a119-2223f47af59a.png" style="padding: 0px; text-align: center; height: 86px; width: 151px; border: 0px;min-height:86px;display:inline-block;" width="151"></td></tr><tr>
+       <td align="left" style="font-family: 'Averta-Semibold', Arial, Helvetica, sans-serif, 'Font-Averta-Semibold'; font-style: normal; font-weight: 600; font-size: 20px; line-height: 25px; color: #026cdf; mso-line-height-rule: exactly;word-break: break-word; vertical-align: top;text-align:center;padding:0 0 12px;" valign="top">
+        Transfer Tickets to Friends</td></tr><tr>
+       <td align="left" style="font-family: 'Averta-Regular', Arial, Helvetica, sans-serif, 'Font-Averta-Regular'; font-style: normal; font-weight: 300; font-size: 16px; line-height: 20px; color: #242424; mso-line-height-rule: exactly;word-break: break-word; vertical-align: top;text-align:center;padding:0px;" valign="top">
+        Easily transfer your tickets on Ticketmaster.com or the app.</td></tr></table></td></tr></table><table align="center" border="0" cellpadding="0" cellspacing="0" class="container" style="max-width: 600px;" width="100%">
+ 
+  <tr>
+   <td align="center" bgcolor="transparent" class="pad-25R pad-25L" style="padding:0px 40px 32px;font-family: 'Averta-Semibold', Arial, Helvetica, sans-serif, 'Font-Averta-Semibold'; font-weight:600; ">
+    <div class="container" style="border-radius: 6px; border: solid 1px #026cdf;overflow:hidden;width:520px;min-height:50px;box-sizing:border-box;display:inline-block;margin:0 auto;padding:0 0;height:50px;max-width:520px;box-sizing:border-box;">
+     <table align="center" border="0" cellpadding="0" cellspacing="0" class="container" width="100%">
+      
+       <tr>
+        <td align="center" height="45" style="font-family: 'Averta-Semibold', Arial, Helvetica, sans-serif, 'Font-Averta-Semibold'; font-weight:600; border-radius: 6px;text-align: center;">
+         <a  class="getStartedButtonLink" href="https://click.email.ticketmaster.com/?qs=c7e4da21928f302a249aaff5bb26ecfe46ff045175082a9757d40988b2b34d398c5a328d1196525d36fb0c304a53401810641b4ede12ed7c0bede4f94160cc0c" style="font-size: 18px; line-height: normal; text-align: center; text-decoration: none; display: block; border-radius: 4px; font-weight: 600;display:inline-block;min-width:260px;width:100%;" target="_blank"><span class="button-link" style=" color:#026cdf;line-height:1;display:inline-block;padding:12px 0;width:100%;">Manage My Tickets</span></a></td></tr></table></div></td></tr></table><!--  --></td></tr></table>  <!--  --></td></tr></table>
+                        
+                      </td>
+                    </tr>
+                    <!--  -->
+                    <!--  -->
+                    <!--  -->
+                    <!--  -->
+                    <!-- -->
+                    <tr>
+                      <td>
+                        <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><!----><!----><!----> <!-- --> <table cellpadding="0" cellspacing="0" width="100%" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><!--TM SafeTix--><!--  --><!--[if gt mso 9]> <style type="text/css" media="all">     /* Outlook 2016 Height Fix */     table, tr, td {border-collapse: collapse;}     tr { font-size:0px; line-height:0px; border-collapse: collapse; } </style> <![endif]--><!----><table align="center" border="0" cellpadding="0" cellspacing="0" class="mobile-ticket-edu" style="border-collapse:collapse;" width="100%">
+ 
+  <tr>
+   <td style="padding-bottom: 40px;">
+    <table align="center" bgcolor="#1F262D" border="0" cellpadding="0" cellspacing="0" class="desktop-content hide" style="border-collapse:collapse;" width="650">
+     
+      <tr>
+       <td class="hide" width="302">
+        <div align="left" style="font-size: 0; line-height: 0;">
+         <img align="left" alt="" border="0" height="327" src="https://image.email.ticketmaster.com/lib/fe8c137277660c7470/m/41/76beca67-e4c5-4e2d-87d7-bc8a13fd1eeb.jpg" style="display:block;" width="302"></div></td><td>
+        <table align="left" border="0" cellpadding="0" cellspacing="0" class="text-cta" style="border-collapse:collapse;" width="348">
+         
+          <tr>
+           <td width="348">
+            <img align="left" alt="With Ticketmaster SafeTix™ Your Phone Is Your Ticket" border="0" height="233" src="https://image.email.ticketmaster.com/lib/fe8c137277660c7470/m/41/e853b2f9-05d4-4816-a366-794a0aa30335.jpg" style="display:block;" width="348"></td></tr><tr>
+           <td width="348">
+            <table align="left" border="0" cellpadding="0" cellspacing="0" class="cta-row" style="border-collapse:collapse;" width="348">
+             
+              <tr>
+               <td width="157">
+                <div align="left" style="font-size: 0; line-height: 0;">
+                 <a href="https://click.email.ticketmaster.com/?qs=c7e4da21928f302a13dba0cba3f072b904cd65c3d6a2f194dbb24466183004726052ac7893564016032dd9b49b70b671f4e623a0c2f02b57dccbc26d85b0f75f" style="line-height:0;" target="_blank"><img align="left" alt="Download the App" border="0" class="cta-button" height="39" src="https://image.email.ticketmaster.com/lib/fe8c137277660c7470/m/41/2b9bee7a-a31b-4b04-a67c-a820c231ff0d.jpg" style="display:block;line-height:0;" width="157"></a></div></td><td width="12">
+                <div align="left" style="font-size: 0; line-height: 0;">
+                 <img align="left" alt="" border="0" height="39" src="https://image.email.ticketmaster.com/lib/fe8c137277660c7470/m/41/9f1c91ca-188a-4e32-a5e7-1c8e495d6075.jpg" style="display:block;" width="12"></div></td><td width="110">
+                <div align="left" style="font-size: 0; line-height: 0;">
+                 <a href="https://click.email.ticketmaster.com/?qs=c7e4da21928f302a3e022a73c1b954e86aade3b37475f66c4f4e3f66128feacbf6f52825df0d8776680e969f026058394a266501e9fe54bc56024d30a1c81655" style="line-height:0;" target="_blank"><img align="left" alt="Learn More" border="0" height="39" src="https://image.email.ticketmaster.com/lib/fe8c137277660c7470/m/41/4f7fb3f3-cd89-4303-a6b3-7143dde57f72.jpg" style="display:block;" width="110"></a></div></td><td width="69">
+                <div align="left" style="font-size: 0; line-height: 0;">
+                 <img align="left" alt="" border="0" height="39" src="https://image.email.ticketmaster.com/lib/fe8c137277660c7470/m/41/00c837ed-8e4a-4694-a70a-d8da5fb953ab.jpg" style="display:block;" width="69"></div></td></tr></table></td></tr><tr>
+           <td width="348">
+            <div align="right" style="font-size: 0; line-height: 0;">
+             <img align="left" alt="TIP" border="0" height="55" src="https://image.email.ticketmaster.com/lib/fe8c137277660c7470/m/41/55db89b7-f12e-49cf-850b-559b5b780944.jpg" style="display:block;" width="348"></div></td></tr></table></td></tr></table><!--[if !mso]>             <!--><!--MOBILE--><table bgcolor="#1F262D" border="0" cellpadding="0" cellspacing="0" class="mobile-content" style="min-width: 100%;" width="100%">
+     
+      <tr class="show-mobile" style="display:none; width:0px; max-height:0px; overflow:hidden; float:left;" valign="top">
+       <td>
+        <img alt="With Ticketmaster SafeTix™ Your Phone Is Your Ticket" class="fullWidthImg" height="0" src="https://image.email.ticketmaster.com/lib/fe8c137277660c7470/m/41/82d46853-eb2b-4dfe-8371-48aaaf11dc18.jpg" style="display:block;" width="0"></td></tr><tr class="show-mobile" style="display:none; width:0px; max-height:0px; overflow:hidden; float:left;" valign="top">
+       <td>
+        <table bgcolor="#1F262D" border="0" cellpadding="0" cellspacing="0" class="mobile-content" style="min-width: 100%;" width="100%">
+         
+          <tr class="show-mobile" style="display:none; width:0px; max-height:0px; overflow:hidden; float:left;" valign="top">
+           <td>
+            <img alt="" class="fullWidthImg" height="0" src="https://image.email.ticketmaster.com/lib/fe8c137277660c7470/m/41/47edd9d5-0d83-4e1c-a5df-1598067b4be7.jpg" style="display:block;" width="0"></td><td>
+            <a href="https://click.email.ticketmaster.com/?qs=c7e4da21928f302a13dba0cba3f072b904cd65c3d6a2f194dbb24466183004726052ac7893564016032dd9b49b70b671f4e623a0c2f02b57dccbc26d85b0f75f" style="display:block;" target="_blank"><img alt="Download the App" border="0" class="fullWidthImg" height="0" src="https://image.email.ticketmaster.com/lib/fe8c137277660c7470/m/41/de3896a2-4e65-4e92-a67b-0f30c61c91b8.jpg" style="display:block;line-height:0;" width="0"></a></td><td>
+            <img alt="" class="fullWidthImg" height="0" src="https://image.email.ticketmaster.com/lib/fe8c137277660c7470/m/41/c029bff0-1d74-4b16-816c-c0b7f2a406c1.jpg" style="display:block;" width="0"></td><td>
+            <a href="https://click.email.ticketmaster.com/?qs=c7e4da21928f302a3e022a73c1b954e86aade3b37475f66c4f4e3f66128feacbf6f52825df0d8776680e969f026058394a266501e9fe54bc56024d30a1c81655" style="display:block;" target="_blank"><img alt="Learn More" border="0" class="fullWidthImg" height="0" src="https://image.email.ticketmaster.com/lib/fe8c137277660c7470/m/41/6527ab62-d77d-47fb-8ae2-4adb1d63ee2d.jpg" style="display:block;line-height:0;" width="0"></a></td><td>
+            <img alt="" class="fullWidthImg" height="0" src="https://image.email.ticketmaster.com/lib/fe8c137277660c7470/m/41/bd029852-d2e1-4d18-a5a6-e138e4ec9aab.jpg" style="display:block;" width="0"></td></tr></table></td></tr><tr>
+       <td>
+        <img alt="" class="fullWidthImg" height="0" src="https://image.email.ticketmaster.com/lib/fe8c137277660c7470/m/41/23567339-3962-4d7b-8a00-b7a4b5f963b3.jpg" style="display:block;" width="0"></td></tr></table><!--MOBILE--><!--<![endif]--></td></tr></table><!----><!--/TM Safetix--></td></tr></table> <!-- --> <!----> <!----> <!----></td></tr></table>
+                        
+                      </td>
+                    </tr>
+                    <!--  -->
+                    <!--  -->
+                    <!-- -->
+                    <tr>
+                      <td>
+                        <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner">
+<!-- Payment Summary -->
+<table align="center" border="0" cellpadding="0" cellspacing="0" class="payment-summary" style="min-width: 100%;" width="100%">
+  <tr>
+    <td align="center" class="mobile-padding16W" style="padding: 0 40px 16px 40px;" valign="top">
+      <!-- Payment summary subtitle -->
+      <table align="center" border="0" cellpadding="0" cellspacing="0" style="min-width: 100%;" width="100%">
+        <tr>
+          <td align="left" style="font-family: 'Averta-Semibold', Arial, Helvetica, sans-serif; font-size: 20px; line-height: 25px; color: #2f2f2f; font-weight: 600;">
+            Payment Summary
+          </td>
+          <td align="right" class="blue-text-link" style="font-family: 'Averta-Semibold', Arial, Helvetica, sans-serif; font-size: 16px; line-height: 25px; color: #2f2f2f; font-weight: 600;">
+            <a  href="https://click.email.ticketmaster.com/?qs=c7e4da21928f302a49c5435284b3559948166faa60a11c91a49e270713b0b0ad26f635fd1195f01154fe353c741773874123918c1bf1fdec54c6acd6a33fb8a2" style="color:#026cdf; text-decoration: none;" target="_blank">View Details</a>
+          </td>
+        </tr>
+      </table>
+      <!-- /Payment summary subtitle -->
+      <!-- separator-line -->
+      <table align="center" border="0" cellpadding="0" cellspacing="0" class="separator-line" width="100%">
+        <tr>
+          <td style="border-bottom: #dfe4e7 1px solid; padding-top:16px; font-size:1px; line-height: 1px; mso-line-height-rule: exactly;">
+            &nbsp;
+          </td>
+        </tr>
+        <tr>
+          <td style="padding-top:16px; font-size:1px; line-height: 1px; mso-line-height-rule: exactly;">
+            &nbsp;
+          </td>
+        </tr>
+      </table>
+      <!-- /separator-line -->
+      <!-- Payment method - total -->
+      
+      <table align="center" border="0" cellpadding="0" cellspacing="0" style="min-width: 100%;" width="100%">
+        <tr>
+          <td align="left" style="font-family: 'Averta-Semibold', Arial, Helvetica, sans-serif; font-size: 14px; line-height: 18px; color: #262626; font-weight: 600;">
+            Payment Method
+          </td>
+          <td>
+            &nbsp;
+          </td>
+        </tr>
+        <tr>
+          <td align="left" style="font-size: 14px; line-height: 20px; color: #999999; padding-bottom: 8px;">
+            VISA&nbsp;&mdash;&nbsp;6338
+            
+          </td>
+          <td align="right" style="font-family: 'Averta-Semibold', Arial, Helvetica, sans-serif; font-size: 16px; line-height: 24px; color: #262626; font-weight: 600; padding-bottom: 8px;">
+            Total:&nbsp;
+            $410.80 
+          </td>
+        </tr>
+      </table>
+      
+      <!-- /Payment method - total -->
+    </td>
+  </tr>
+</table>
+<!-- /Payment Summary --></td></tr></table> <table cellpadding="0" cellspacing="0" width="100%" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><!-- START DELIVERY METHODS --><!-- Ticket Delivery Mobile --><table align="center" border="0" cellpadding="0" cellspacing="0" class="imp-details-wrapper" width="100%">
+	
+		<tr>
+			<td class="mobile-padding16W" style="padding: 0 40px 33px 40px;">
+				<table align="center" border="0" cellpadding="0" cellspacing="0" class="imp-details" style="min-width:100%; border: 1px solid #ebebeb; border-radius: 2px; background-color: #f6f6f6;" width="100%">
+					
+						<tr>
+							<td style="padding: 16px;">
+								<table align="center" border="0" cellpadding="0" cellspacing="0" class="imp-details-content" width="100%">
+									
+										<tr>
+											<td align="left" style="padding-top:5px;" valign="top" width="45">
+												<table align="left" border="0" cellpadding="0" cellspacing="0" width="100%">
+													<!--  -->
+														<tr>
+															<td align="left" style="padding-top:5px;">
+																<img alt="MOBILE" height="30" src="https://image.email.ticketmaster.com/lib/fe8c137277660c7470/m/35/64feed19-451a-44f5-9891-cd86602f7d9f.png" style="display:block; width: auto;"></td></tr><!--  --></table></td><td align="left" class="blue-text-link" style="font-family: 'Averta-Regular', Arial, Helvetica, sans-serif;font-size: 14px; line-height: 20px; color: #262626;" valign="top">
+												<font face="'Averta-Semibold', Arial, Helvetica, sans-serif"><strong>Mobile:</strong></font>&nbsp;To access your tickets for entry, you’ll need to download the Ticketmaster App or add your tickets to your mobile wallet.</td></tr></table></td></tr></table><!-- /Inner content --></td></tr></table><!-- /Ticket Delivery Mobile --><!-- END DELIVERY METHODS --></td></tr></table> <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><!-- START UPSELL EVENTS --><!-- END UPSELL EVENTS --></td></tr></table></td></tr></table>
+                        
+                      </td>
+                    </tr>
+                    <!--  -->
+                    <!--  -->
+                    <!-- -->
+                    <tr>
+                      <td>
+                        <table cellpadding="0" cellspacing="0" width="100%" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"></td></tr></table><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"></td></tr></table>
+                        
+                      </td>
+                    </tr>
+                    <!--  -->
+                    <!--  -->
+                    <!-- -->
+                    <tr>
+                      <td>
+                        <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><!--  -->
+<!-- --> <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><!-- Educational Upsell -->
+<table align="center" border="0" cellpadding="0" cellspacing="0" class="edu-upsell full-width" width="650">
+  <tr>
+    <td align="center" class="mobile-padding16W" style="padding: 0 40px 40px 40px;" valign="top">
+      <!-- Educational subtitle -->
+      <table align="center" border="0" cellpadding="0" cellspacing="0" class="edu-subtitle" style="min-width: 100%;" width="100%">
+        <tr>
+          <td align="left" background="https://image.email.ticketmaster.com/lib/fe8c137277660c7470/m/35/b6d3808a-4b91-49dd-839c-41a23bcb68ba.png" bgcolor="#026cdf" height="70" style="font-family: 'Averta-Semibold', Arial, Helvetica, sans-serif; font-size: 20px; line-height: 25px; color: #FFFFFF; font-weight: 600; padding-left:16px; border-radius:4px 4px 0 0;">
+            Things to Know
+          </td>
+        </tr>
+      </table>
+      <!-- /Educational subtitle -->
+      <!-- Educational items multiple -->
+      <table align="center" border="0" cellpadding="0" cellspacing="0" class="edu-items-container" width="100%">
+        <tr>
+          <td style="border-right: 1px solid #ebebeb; border-bottom: 1px solid #ebebeb; border-left: 1px solid #ebebeb; border-radius: 0 0 4px 4px; " valign="top">
+            
+            <!--  -->
+            <!--   -->
+            <!-- Educational item -->
+            <table align="center" border="0" cellpadding="0" cellspacing="0" class="edu-item" style="min-width: 100%" width="100%">
+              <tr>
+                <td class="mobile-padding16W" style="padding:0 20px;">
+                  <table align="center" border="0" cellpadding="0" cellspacing="0" class="item-bborder" width="100%">
+                    <tr>
+                      <td style="border-bottom:1px solid #ebebeb;">
+                        <table align="center" border="0" cellpadding="0" cellspacing="0" class="item-content" width="100%">
+                          <tr>
+                            <td align="left" style="font-size: 16px; line-height: 20px; color: #262626; padding:16px 0;" valign="middle">
+                              <a  href="https://click.email.ticketmaster.com/?qs=c7e4da21928f302a9522738d6415079df69382d19c455cc4b0396d6b3748903527510d5594ebf51c10699b090b67633b0a069830fc163b93abe287187948ab91" style="color:#262626; text-decoration:none; display:block;" target="_blank"><strong style="font-weight:normal;">Send Tickets to Your Group Ahead of Time</strong></a>
+                            </td>
+                            <td align="right" width="11">
+                              <a  href="https://click.email.ticketmaster.com/?qs=c7e4da21928f302a9522738d6415079df69382d19c455cc4b0396d6b3748903527510d5594ebf51c10699b090b67633b0a069830fc163b93abe287187948ab91" target="_blank"><img border="0" src="https://image.email.ticketmaster.com/lib/fe8c137277660c7470/m/35/8f9d2405-7c32-4046-a640-55ee41255305.png" style="height: auto; display:block;" width="11"></a>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+            <!-- /Educational item -->
+            <!--  -->
+            <!-- Educational item -->
+            <table align="center" border="0" cellpadding="0" cellspacing="0" class="edu-item" style="min-width: 100%" width="100%">
+              <tr>
+                <td class="mobile-padding16W" style="padding:0 20px;">
+                  <table align="center" border="0" cellpadding="0" cellspacing="0" class="item-bborder" width="100%">
+                    <tr>
+                      <td style="border-bottom:1px solid #ebebeb;">
+                        <table align="center" border="0" cellpadding="0" cellspacing="0" class="item-content" width="100%">
+                          <tr>
+                            <td align="left" style="font-size: 16px; line-height: 20px; color: #262626; padding:16px 0;" valign="middle">
+                              <a  href="https://click.email.ticketmaster.com/?qs=c7e4da21928f302a5e037e1387b43c80cab41fc3b05948d5e07c743fb7fcc6e78d821245956daeade552197d83645dced721516ff47469edec7b8eaf8428e987" style="color:#262626; text-decoration:none; display:block;" target="_blank"><strong style="font-weight:normal;">Manage Your Account</strong></a>
+                            </td>
+                            <td align="right" width="11">
+                              <a  href="https://click.email.ticketmaster.com/?qs=c7e4da21928f302a5e037e1387b43c80cab41fc3b05948d5e07c743fb7fcc6e78d821245956daeade552197d83645dced721516ff47469edec7b8eaf8428e987" target="_blank"><img border="0" src="https://image.email.ticketmaster.com/lib/fe8c137277660c7470/m/35/8f9d2405-7c32-4046-a640-55ee41255305.png" style="height: auto; display:block;" width="11"></a>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+            <!-- /Educational item -->
+            <!-- Help Center -->
+            <table align="center" border="0" cellpadding="0" cellspacing="0" class="help-center" width="100%">
+              <tr>
+                <td align="center" class="blue-text-link" style="padding:16px; font-family: 'Averta-Semibold', Arial, Helvetica, sans-serif; font-size: 16px; line-height: 24px; color: #026cdf; font-weight: 600;">
+                  <a  href="https://click.email.ticketmaster.com/?qs=c7e4da21928f302a2df2fd2e6f4f0c7e8c067b45518582dc56204ff5bf53babcbbe5a4dfbf21f58863143b94ea957043306753fb01f21c8969362e7a0cc3b4a6" style="color:#026cdf; text-decoration:none; display:block;" target="_blank">For more information visit our Help Center</a>
+                </td>
+              </tr>
+            </table>
+            <!-- /Help Center -->
+          </td>
+        </tr>
+      </table>
+      <!-- /Educational items multiple -->
+    </td>
+  </tr>
+</table>
+<!-- /Educational Upsell --></td></tr></table> 
+<!----> 
+<!----></td></tr></table>
+                        
+                      </td>
+                    </tr>
+                    <!--  -->
+                    <!--  -->
+                    <!--  -->
+                    <!--  -->
+                    <!--  -->
+                    <!--  -->
+                    <!--  -->
+                    <!--  -->
+                    <!--  -->
+                    <!--  -->
+                    <!--  -->
+                    <!--  -->
+                    <!--  -->
+                    <!--  -->
+                    <!--  -->
+                    <!-- -->
+                    <tr>
+                      <td>
+                        <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"> 
+<!--  --> 
+<!----></td></tr></table>
+                        
+                      </td>
+                    </tr>
+                    <!--  -->
+                    <!--  -->
+                    <!--  -->
+                    <!-- -->
+                    <tr>
+                      <td>
+                        
+
+
+<table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"> <!----> <!----></td></tr></table>
+                        
+                      </td>
+                    </tr>
+                    <!--  -->
+                    <!--  -->
+                    <!--  -->
+                    <!--  -->
+                    <!--  -->
+                    <!--  -->
+                    <!--  -->
+                    <!--  -->
+                    <!-- -->
+                    <tr>
+                      <td>
+                        
+                      </td>
+                    </tr>
+                    <!--  -->
+                    <!-- -->
+                    <tr>
+                      <td>
+                        <table cellpadding="0" cellspacing="0" width="100%" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><!-- PC Footer --><!----> <table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><!-- TM Footer Wrapper --><table align="center" bgcolor="#1f262d" border="0" cellpadding="0" cellspacing="0" class="TM_Footer_Wrapper" style="min-width:100%" width="100%">
+	
+		<tr>
+			<td align="center">
+				<table cellpadding="0" cellspacing="0" width="100%" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><!-- TM Social --><!----><table align="center" bgcolor="#1f262d" border="0" cellpadding="0" cellspacing="0" width="100%">
+ 
+  <tr>
+   <td align="center" class="mobile-padding16W" style="padding:25px 0 34px 0;" valign="middle">
+    <table align="center" border="0" cellpadding="0" cellspacing="0" class="full-width" width="650">
+     
+      <tr>
+       <td align="center" style="font-family: 'Averta-Semibold', Arial, Helvetica, sans-serif; font-size: 12px; line-height: 30px; color: #ffffff; padding-bottom:8px;" valign="middle">
+        Stay Connected</td></tr><tr>
+       <td align="center">
+        <table align="center" border="0" cellpadding="0" cellspacing="0">
+         
+          <tr>
+           <td align="left" height="20" style="padding-right: 40px;" valign="middle" width="9">
+            <a  href="https://click.email.ticketmaster.com/?qs=c7e4da21928f302abb20c2e1b658941b67d05dc6ecb598ef2ff399f2f648fe220d6502e58e2092be033d6d9da0cfd783723d21051c0d80ab032fdd37fe86e787"><img alt="Facebook" border="0" height="17" src="https://image.email.ticketmaster.com/lib/fe8c137277660c7470/m/35/a87166f5-45cb-4d6f-b291-f7e1b90599af.png" style="display: block;" width="9"></a></td><td align="left" height="20" style="padding-right: 40px;" valign="middle" width="17">
+            <a  href="https://click.email.ticketmaster.com/?qs=c7e4da21928f302a68d0cd41565ccc381af1da26503bde2903c68d79e656d6233763b9d41246e6901ba15ce72170d3390bcace7ef492447add73cd1f1b549118"><img alt="Instagram" border="0" height="17" src="https://image.email.ticketmaster.com/lib/fe8c137277660c7470/m/35/20aef770-56ae-4d0a-b957-ea3a616a7075.png" style="display: block;" width="17"></a></td><td align="left" height="20" style="padding-right: 40px;" valign="middle" width="20">
+            <a  href="https://click.email.ticketmaster.com/?qs=c7e4da21928f302a9311ff1a8ba60c404ffda3744f651077d6f5f323a7fde1391f9ac6f783ea2e92a7ec8b252f94b8663d4077db567e176ebdccfbd154ba39c6"><img alt="Twitter" border="0" height="17" src="https://image.email.ticketmaster.com/lib/fe8c137277660c7470/m/35/26f399ad-2f2a-449f-9f7e-715214f0bcd6.png" style="display: block;" width="20"></a></td><td align="left" height="20" style="padding: 0px;" valign="middle" width="25">
+            <a  href="https://click.email.ticketmaster.com/?qs=c7e4da21928f302a0597f7c33dfbadcb12609556e65e633fb9ad4b2d6fb0fcb2c32adca546a03b4ba4ac836edf6b9637c3ae4fc1b96d9ef94010e3a3c10360d9"><img alt="YouTube" border="0" height="17" src="https://image.email.ticketmaster.com/lib/fe8c137277660c7470/m/35/4ec8c270-cb6b-4c73-8e14-fb0eb2daa26d.png" style="display: block;" width="25"></a></td></tr></table></td></tr></table></td></tr></table><!-- TM Social --></td></tr></table></td></tr><tr>
+			<td align="center">
+				<table cellpadding="0" cellspacing="0" width="100%" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><!-- TM Footer --><!----><table align="center" bgcolor="#1f262d" border="0" cellpadding="0" cellspacing="0" class="footernav-wrapper" width="100%">
+ 
+  <tr>
+   <td align="center">
+    <table align="center" border="0" cellpadding="0" cellspacing="0" class="full-width" width="650">
+     
+      <tr>
+       <td align="center" class="mobile-padding16W" style="padding-bottom:50px;" valign="middle">
+        <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
+         
+          <tr>
+           <td align="center" valign="top">
+            <table align="center" border="0" cellpadding="0" cellspacing="0" class="footer-nav">
+             
+              <tr>
+               <td align="center" style="text-align:center;" valign="top">
+                <table align="center" border="0" cellpadding="0" cellspacing="0" class="stackTbl" style="display: inline-table;">
+                 
+                  <tr>
+                   <td align="center" valign="top">
+                    <table align="center" border="0" cellpadding="0" cellspacing="0">
+                     
+                      <tr>
+                       <td align="center" class="white-text-link" style="font-family: 'Averta-Semibold', Arial, Helvetica, sans-serif; color: #FFFFFF; font-size: 12px; line-height: 20px; padding: 0px;font-weight: 600;" valign="top">
+                        <a  href="https://click.email.ticketmaster.com/?qs=c7e4da21928f302a03a2bd78a2cdd921f662f56f1f47161e06ba49fdf179480c140d4078124ce8d4ca8d0d267d8c756cf103c15bb8cfc7f03e98219d208c15cf" style="color: #FFFFFF; text-decoration: none;" target="_blank">Ticketmaster</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a  href="https://click.email.ticketmaster.com/?qs=c7e4da21928f302a763d8e1e7ca515658b5baab49db52a5389e69642dfbfb78687d72c12e6b09dd04c68a1ad2f2df53d4e2828234f13f7570a9886ade7bcf2f1" style="color: #FFFFFF; text-decoration: none;" target="_blank">About</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a  href="https://click.email.ticketmaster.com/?qs=c7e4da21928f302aaf18ea3a5f6937232ae439078960d972b8b82f9be40f87db12d6efe264c3a0618172d5e272664608099e7ee38c20588053ce6b59cb781baf" style="color: #FFFFFF; text-decoration: none;" target="_blank">Terms of Use</a> <span class="hide"> &nbsp;&nbsp;|</span></td></tr></table></td></tr></table>
+<!--[if gt mso 9]>                                             </td>                                             <td align="center" style="text-align:center;" valign="top">                                                 <![endif]--><table align="center" border="0" cellpadding="0" cellspacing="0" class="stackTbl" style="display: inline-table;">
+                 
+                  <tr>
+                   <td align="center" valign="top">
+                    <table align="center" border="0" cellpadding="0" cellspacing="0">
+                     
+                      <tr>
+                       <td align="center" class="white-text-link" style="font-family: 'Averta-Semibold', Arial, Helvetica, sans-serif; color: #FFFFFF; font-size: 12px; line-height: 20px; font-weight: 600; text-align: center; padding: 0px 0px 0px 8px;" valign="top">
+                        <a  href="https://click.email.ticketmaster.com/?qs=c7e4da21928f302a10e8916e6810d4c009623c18bf8d01a79f5f0f4dfd98b033981749690dc7d9cc8472a9318bcdf34c5b45ac718dc1506a1d34d2a3240d252f" style="color: #FFFFFF; text-decoration: none;" target="_blank">Privacy</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a  href="https://click.email.ticketmaster.com/?qs=c7e4da21928f302ac9f35d00f29620aadf2e5191837d72c043a36393835ff558996cc33e3f97a4b3bc70901beb39ac3a12944a97fadcc22ec3771a3134e24515" style="color: #FFFFFF; text-decoration: none;" target="_blank">International</a></td></tr></table></td></tr></table></td></tr></table></td></tr><tr>
+           <td align="center" class="white-text-link" style="font-family:'Averta-Regular', Arial, Helvetica, sans-serif; color: #FFFFFF; font-size: 12px; line-height: 20px; font-weight: normal; padding-top: 16px;">
+            707 Virginia Street East, Suite 170, Charleston, WV 25301<br>
+            &copy; 2025 Ticketmaster. All rights reserved.</td></tr></table></td></tr></table></td></tr></table><!-- TM Footer --></td></tr></table></td></tr></table><!-- /TM Footer Wrapper --></td></tr></table> <!----> <!-- PC Footer --></td></tr></table>
+                        
+                      </td>
+                    </tr>
+                    <!--  -->
+                    <!-- -->
+                    <tr>
+                      <td>
+                        <table cellpadding="0" cellspacing="0" width="100%" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><!----></td></tr></table><table cellpadding="0" cellspacing="0" width="100%" role="presentation" style="min-width: 100%; " class="stylingblock-content-wrapper"><tr><td class="stylingblock-content-wrapper camarker-inner"><!-- PC CA Disclosure --><!--  --><!-- PC CA Disclosure --></td></tr></table>
+
+
+                        
+                      </td>
+                    </tr>
+                    <!--  -->
+                    <!---->
+                  </table>
+                  <!-- CONTENT AREA(S) END -->
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+      <!-- END WHITE BACKGROUND CONTAINER -->     
+      </body>
+    </html>
+
+--i2TX2XhxDcTC=_?:--
+

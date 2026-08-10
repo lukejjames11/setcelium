@@ -4,3 +4,4 @@
 /Users/lukejames/Documents/setcelium/src/main/java/com/setcelium/model/Concert.java
 /Users/lukejames/Documents/setcelium/src/main/java/com/setcelium/repository/ConcertRepository.java
 /Users/lukejames/Documents/setcelium/src/main/java/com/setcelium/service/parser/EmailParser.java
+/Users/lukejames/Documents/setcelium/src/main/java/com/setcelium/service/parser/TicketmasterParser.java
