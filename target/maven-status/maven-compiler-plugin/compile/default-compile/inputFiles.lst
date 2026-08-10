@@ -1,1 +1,6 @@
 /Users/lukejames/Documents/setcelium/src/main/java/com/setcelium/SetceliumApplication.java
+/Users/lukejames/Documents/setcelium/src/main/java/com/setcelium/dto/ImportSummary.java
+/Users/lukejames/Documents/setcelium/src/main/java/com/setcelium/dto/ParsedConcert.java
+/Users/lukejames/Documents/setcelium/src/main/java/com/setcelium/model/Concert.java
+/Users/lukejames/Documents/setcelium/src/main/java/com/setcelium/repository/ConcertRepository.java
+/Users/lukejames/Documents/setcelium/src/main/java/com/setcelium/service/parser/EmailParser.java

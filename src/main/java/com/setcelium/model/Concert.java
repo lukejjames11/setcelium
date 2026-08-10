@@ -24,7 +24,6 @@ public class Concert {
 
     }
 
-
     public Concert(String artist, String venue, LocalDate showDate, String city, String state, String source, String orderNumber, boolean needsReview) {
         this.artist = artist;
         this.venue = venue;
