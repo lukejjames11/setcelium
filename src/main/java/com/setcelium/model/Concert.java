@@ -18,7 +18,7 @@ public class Concert {
     private String state;
     private String source;        // e.g. "ticketmaster_import" or "manual"
     private String orderNumber;   // used for dedup on import, nullable for manual entries
-    private boolean needsReview;  // true if import confidence was low
+    private boolean needsReview;  // true if it needs review
 
     public Concert() {
 
