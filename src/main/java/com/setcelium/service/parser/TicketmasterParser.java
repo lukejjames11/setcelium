@@ -45,12 +45,24 @@ public class TicketmasterParser implements EmailParser {
             if (from == null) {
                 return false;
             }
+            boolean senderMatches = false;
             for (Address address : from) {
                 if (address.toString().contains("email.ticketmaster.com")) {
-                    return true;
+                    senderMatches = true;
+                    break;
                 }
             }
-            return false;
+            if(!senderMatches) {
+                return false;
+            }
+
+            String subject = message.getSubject();
+            if(subject == null) {
+                return false;
+            }
+
+            return subject.toLowerCase().contains("you got");
+
         } catch (MessagingException e) {
             return false;
         }
@@ -144,7 +156,7 @@ public class TicketmasterParser implements EmailParser {
         Map<String, Object> message = Map.of("role", "user", "content", prompt);
         Map<String, Object> body = new LinkedHashMap<>();
         body.put("model", "claude-haiku-4-5-20251001");
-        body.put("max_tokens", 500);
+        body.put("max_tokens", 1024);
         body.put("messages", List.of(message));
         return objectMapper.writeValueAsString(body);
     }
