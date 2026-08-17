@@ -34,16 +34,20 @@ function wrapText(ctx: CanvasRenderingContext2D, text: string, maxWidth: number)
   return lines;
 }
 
-function GraphView() {
+interface GraphViewProps {
+  refreshTrigger: number;
+}
+
+function GraphView({ refreshTrigger }: GraphViewProps) {
   const [graphData, setGraphData] = useState<GraphResponse>({ nodes: [], links: [] });
   const [selectedNode, setSelectedNode] = useState<GraphNode | null>(null);
-  const fgRef = useRef<any>();
+  const fgRef = useRef<any>(null);
 
   useEffect(() => {
     fetch('http://localhost:8080/api/graph')
       .then((response) => response.json())
       .then((data: GraphResponse) => setGraphData(data));
-  }, []);
+  }, [refreshTrigger]);
 
   useEffect(() => {
     if (fgRef.current) {

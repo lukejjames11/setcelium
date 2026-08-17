@@ -16,3 +16,16 @@ export interface GraphResponse {
   nodes: GraphNode[];
   links: GraphLink[];
 }
+
+export interface CreateArtistRequest {
+  name: string;
+  imageUrl: string | null;
+}
+
+export interface CreateDiscoveryEdgeRequest {
+  fromArtistName: string | null;
+  toArtistName: string;
+  connectorName: string | null;
+  edgeType: string | null;
+  notes: string | null;
+}
