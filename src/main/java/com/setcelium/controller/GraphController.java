@@ -4,6 +4,7 @@ import com.setcelium.dto.GraphResponse;
 import com.setcelium.service.GraphService;
 import org.springframework.web.bind.annotation.*;
 
+@CrossOrigin(origins = "http://localhost:5173")
 @RestController
 @RequestMapping("/api/graph")
 public class GraphController {

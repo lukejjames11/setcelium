@@ -38,7 +38,7 @@ public class GraphService {
         List<GraphNode> artistNodes = new ArrayList<>();
 
         for (Artist artist : artists) {
-            GraphNode node = new GraphNode(artist.getId(), artist.getName());
+            GraphNode node = new GraphNode(artist.getId(), artist.getName(), artist.getImageUrl());
             artistNodes.add(node);
         }
 

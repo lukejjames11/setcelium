@@ -1,5 +1,6 @@
 package com.setcelium.service;
 
+import com.setcelium.dto.CreateArtistRequest;
 import com.setcelium.exception.ArtistNotFoundException;
 import com.setcelium.model.Artist;
 import com.setcelium.repository.ArtistRepository;
@@ -37,12 +38,12 @@ public class ArtistService {
         }
     }
 
-    public Artist createArtist(String name) {
+    public Artist createArtist(String name, String imageUrl) {
         // TODO: construct a new Artist, save it, return the saved result
         // (remember: save() returns the object WITH its generated id —
         // this bit you now know from experience with Concert)
 
-        Artist newArtist = new Artist(name);
+        Artist newArtist = new Artist(name, imageUrl);
 
         return artistRepository.save(newArtist);
 
@@ -66,7 +67,7 @@ public class ArtistService {
      * when creating an edge, so a duplicate "The White Stripes" never
      * gets created just because someone typed the name again.
      */
-    public Artist findOrCreateArtist(String name) {
+    public Artist findOrCreateArtist(String name, String imageUrl) {
         // TODO: use artistRepository.findByName(name) — it returns
         // an Optional<Artist>. If present, return it. If empty,
         // call createArtist(name) instead.
@@ -77,7 +78,15 @@ public class ArtistService {
             return artist.get();
         }
         else {
-            return createArtist(name);
+            return createArtist(name, imageUrl);
         }
     }
+
+    public Artist updateArtist(UUID id, CreateArtistRequest request) {
+        Artist artist = getArtistById(id);
+        artist.setName(request.name());
+        artist.setImageUrl(request.imageUrl());
+        return artistRepository.save(artist);
+    }   
+
 }
