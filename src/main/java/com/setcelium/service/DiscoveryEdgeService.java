@@ -55,10 +55,10 @@ public class DiscoveryEdgeService {
         Artist fromArtist = null;
 
         if (request.fromArtistName() != null) {
-            fromArtist = artistService.findOrCreateArtist(request.fromArtistName());
+            fromArtist = artistService.findOrCreateArtist(request.fromArtistName(), null);
         }
 
-        Artist toArtist = artistService.findOrCreateArtist(request.toArtistName());
+        Artist toArtist = artistService.findOrCreateArtist(request.toArtistName(), null);
 
         DiscoveryEdge newEdge = new DiscoveryEdge();
 

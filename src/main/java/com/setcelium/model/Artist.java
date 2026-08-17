@@ -11,11 +11,13 @@ public class Artist {
     private UUID id;
 
     private String name;
+    private String imageUrl;
 
     public Artist() {}
 
-    public Artist(String name) {
+    public Artist(String name, String imageUrl) {
         this.name = name;
+        this.imageUrl = imageUrl;
     }
 
     public UUID getId() {
@@ -28,6 +30,14 @@ public class Artist {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getImageUrl() {
+        return this.imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 
 }
