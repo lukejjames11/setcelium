@@ -72,6 +72,7 @@ This project followed a design-first engineering process (Hybrid/Iterative-Incre
 - **Live Gmail API sync**, replacing the manual `.mbox` export/upload flow.
 - **Multi-user support** — linking other people's accounts to your discovery graph (the original "who introduced you to this artist" social feature), with proper auth.
 - **Non-provider-specific email parsing** — a generic LLM-based classifier ("is this any kind of ticket confirmation, from any sender") rather than per-provider sender/subject filtering.
+- **Frontend Design** - experimenting with frontend design options like Figma, tailwind, etc. 
 
 ## Acknowledgments
 
