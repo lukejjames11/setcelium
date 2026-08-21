@@ -252,7 +252,7 @@ export default function App() {
           />
         )}
 
-        {view === 'import' && <ImportView />}
+        {view === 'import' && <ImportView onImportComplete={loadAll} />}  
       </main>
 
       <AddDataSheet
